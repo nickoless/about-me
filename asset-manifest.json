@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.a0026d83.js",
+    "main.js": "/static/js/main.c640e8f9.js",
     "static/js/651.608c4f08.chunk.js": "/static/js/651.608c4f08.chunk.js",
     "static/media/NeueMontreal-Medium.otf": "/static/media/NeueMontreal-Medium.0f34f4714f1b26e0dedc.otf",
     "static/media/NeueMontreal-Book.otf": "/static/media/NeueMontreal-Book.cd21cf351f4da50cf75d.otf",
     "static/media/me.jpg": "/static/media/me.36586d505a27d170611a.jpg",
     "index.html": "/index.html",
-    "main.a0026d83.js.map": "/static/js/main.a0026d83.js.map",
+    "main.c640e8f9.js.map": "/static/js/main.c640e8f9.js.map",
     "651.608c4f08.chunk.js.map": "/static/js/651.608c4f08.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a0026d83.js"
+    "static/js/main.c640e8f9.js"
   ]
 }
