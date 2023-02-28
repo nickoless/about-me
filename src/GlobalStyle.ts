@@ -50,6 +50,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         font-family: 'Neue Montreal', sans-serif;
         color: ${theme.offBlack};
+        letter-spacing: 1px;
     }
 
     h1 {

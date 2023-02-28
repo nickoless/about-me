@@ -18,7 +18,7 @@ const NavBarEl = styled.nav`
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: end;
     width: 100%;
     height: 80px;
 `;
@@ -26,6 +26,6 @@ const NavBarEl = styled.nav`
 const NavLink = styled.a`
     font-family: 'Neue Montreal Medium';
     color: ${theme.offBlack};
-    font-size: 1.5rem;
     margin-right: 2rem;
+    font-size: 1.5rem;
 `;

@@ -13,7 +13,13 @@ const Home = () => {
                     developer
                     <Image src={meImage} />
                 </LeftJumbo>
-                <RightJumbo>Nick Lee</RightJumbo>
+                <TextWrapper>
+                    <RightJumbo>Nick Lee</RightJumbo>
+                    <SubHeading>
+                        Experienced front end developer driven by aesthetics. I
+                        enjoy bringing designs and concepts to life.
+                    </SubHeading>
+                </TextWrapper>
             </ContentWrapper>
         </Homepage>
     );
@@ -23,7 +29,7 @@ export default Home;
 
 /** STYLES */
 
-const Homepage = styled.div`
+const Homepage = styled.section`
     display: flex;
     align-items: center;
     height: 100vh;
@@ -54,43 +60,76 @@ const ContentWrapper = styled.div`
 
 const JumboText = styled.h1`
     margin: 0;
-    font-size: 175px;
+    font-size: 60px;
     line-height: 1;
     text-transform: uppercase;
 
-    @media ${device.mobileS} {
-        font-size: 60px;
-    }
     @media ${device.tablet} {
         font-size: 125px;
     }
     @media ${device.laptop} {
-        font-size: 175px;
+        font-size: 150px;
     }
 `;
 
 const LeftJumbo = styled(JumboText)`
     position: relative;
-    /* padding-top: 100px; */
 `;
 
 const RightJumbo = styled(JumboText)`
-    padding-top: 50px;
     text-align: right;
     z-index: 1;
 `;
 
 const Image = styled.img`
-    position: absolute;
+    margin-left: 4px;
+    height: 165px;
 
-    @media ${device.mobileS} {
-        height: 225px;
+    @media ${device.mobileL} {
+        position: absolute;
         bottom: -230px;
-        left: 70px;
+        left: 4px;
+        margin: 0;
+        height: 225px;
     }
     @media ${device.tablet} {
-        height: 300px;
-        bottom: -290px;
+        height: 280px;
+        bottom: -275px;
         left: 13px;
+    }
+`;
+
+const SubHeading = styled.p`
+    font-size: 18px;
+    text-align: right;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: 100%;
+    left: 0;
+
+    @media ${device.laptop} {
+        font-size: 25px;
+        text-align: left;
+        width: 540px;
+        margin-top: 10px;
+        margin-left: 1rem;
+    }
+`;
+
+const TextWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    margin-top: 50px;
+    width: 100%;
+
+    @media ${device.tablet} {
+        margin-top: 166px;
+        width: 540px;
+    }
+    @media ${device.laptop} {
+        margin-top: 0;
+        width: 650px;
     }
 `;
