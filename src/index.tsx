@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import GlobalStyle from './GlobalStyle';
 import App from './App';
+import GlobalStyle from './GlobalStyle';
 import reportWebVitals from './reportWebVitals';
 
 const domNode = document.getElementById('root');
@@ -13,5 +13,8 @@ root.render(
         <App />
     </StrictMode>
 );
+
+// Cursor is courtesy of Andriy Chermerynskiy via https://dev.to/andrewchmr/awesome-animated-cursor-with-react-hooks-5ec3
+// Design heavily inspired by https://dribbble.com/gilhuybrecht
 
 reportWebVitals();

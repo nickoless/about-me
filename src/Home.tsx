@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import meImage from './assets/images/me.jpg';
+import { device } from './GlobalStyle';
 import SideBar from './SideBar';
 
 const Home = () => {
@@ -8,11 +9,11 @@ const Home = () => {
             <SideBar />
             <ContentWrapper>
                 <LeftJumbo>
-                    FRONTEND <br />
-                    DEVELOPER
+                    Frontend <br />
+                    developer
                     <Image src={meImage} />
                 </LeftJumbo>
-                <RightJumbo>NICK LEE</RightJumbo>
+                <RightJumbo>Nick Lee</RightJumbo>
             </ContentWrapper>
         </Homepage>
     );
@@ -33,15 +34,36 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 50px;
     height: 80%;
-    width: 100%;
+    width: calc(100% - 80px);
+
+    @media ${device.mobileM} {
+        padding: 0 25px;
+    }
+    @media ${device.tablet} {
+        height: 750px;
+        padding: 0 50px;
+    }
+    @media ${device.desktop} {
+        height: 900px;
+    }
 `;
 
 const JumboText = styled.h1`
     margin: 0;
     font-size: 175px;
     line-height: 1;
+    text-transform: uppercase;
+
+    @media ${device.mobileS} {
+        font-size: 60px;
+    }
+    @media ${device.tablet} {
+        font-size: 125px;
+    }
+    @media ${device.laptop} {
+        font-size: 175px;
+    }
 `;
 
 const LeftJumbo = styled(JumboText)`
@@ -52,11 +74,20 @@ const LeftJumbo = styled(JumboText)`
 const RightJumbo = styled(JumboText)`
     padding-top: 50px;
     text-align: right;
+    z-index: 1;
 `;
 
 const Image = styled.img`
     position: absolute;
-    height: 300px;
-    bottom: -190px;
-    left: 13px;
+
+    @media ${device.mobileS} {
+        height: 225px;
+        bottom: -230px;
+        left: 70px;
+    }
+    @media ${device.tablet} {
+        height: 300px;
+        bottom: -290px;
+        left: 13px;
+    }
 `;
