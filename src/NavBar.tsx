@@ -21,7 +21,6 @@ const NavBarEl = styled.nav`
     justify-content: flex-end;
     width: 100%;
     height: 80px;
-    /* margin: 0 2rem; */
 `;
 
 const NavLink = styled.a`
