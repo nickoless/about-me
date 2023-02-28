@@ -34,15 +34,18 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80%;
-    width: calc(100% - 80px);
+    width: 100%;
 
     @media ${device.mobileM} {
         padding: 0 25px;
+        height: 525px;
     }
     @media ${device.tablet} {
-        height: 750px;
         padding: 0 50px;
+        width: calc(100% - 80px);
+    }
+    @media ${device.laptop} {
+        height: 700px;
     }
     @media ${device.desktop} {
         height: 900px;

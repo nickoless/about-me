@@ -34,15 +34,16 @@ export default SideBar;
 /** STYLES */
 
 const SideBarWrapper = styled.div`
+    display: none;
     height: 80%;
+    min-width: 80px;
     width: 80px;
-    margin: 50px 0;
     border-right: 2px solid ${theme.offWhite};
 
     a {
         cursor: none;
+        font-family: 'Neue Montreal Medium';
         color: ${theme.offBlack};
-        font-weight: 600;
         text-decoration: none;
         text-transform: uppercase;
         transform: rotate(-180deg);
@@ -55,13 +56,11 @@ const SideBarWrapper = styled.div`
         }
     }
 
-    @media ${device.mobileS} {
-        display: none;
-    }
     @media ${device.tablet} {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 50px 0;
     }
 `;

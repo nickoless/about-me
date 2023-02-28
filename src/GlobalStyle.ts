@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import NeueMontreal from './assets/fonts/NeueMontreal-Book.otf';
+import NeueMontrealMedium from './assets/fonts/NeueMontreal-Medium.otf';
 
 /** Base theme */
 
@@ -39,20 +40,20 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Neue Montreal';
         src: url(${NeueMontreal}) format('opentype');
     }
-    /* @font-face {
-        font-family: 'Neue Montreal Bold';
-        src: url(${NeueMontreal}) format('opentype');
-    } */
+    @font-face {
+        font-family: 'Neue Montreal Medium';
+        src: url(${NeueMontrealMedium}) format('opentype');
+    }
 
     body {
         cursor: none;
         margin: 0;
-        font-family: 'Neue Montreal';
+        font-family: 'Neue Montreal', sans-serif;
         color: ${theme.offBlack};
     }
 
     h1 {
-        font-family: 'Neue Montreal';
+        font-family: 'Neue Montreal', sans-serif;
     }
 `;
 
