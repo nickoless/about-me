@@ -2,20 +2,62 @@ import styled from 'styled-components';
 import meImage from './assets/images/me.jpg';
 import { device } from './GlobalStyle';
 import SideBar from './SideBar';
+import { motion } from 'framer-motion';
 
 const Home = () => {
     return (
         <Homepage>
             <SideBar />
             <ContentWrapper>
-                <LeftJumbo>
-                    Frontend <br />
-                    developer
-                    <Image src={meImage} />
-                </LeftJumbo>
+                <div style={{ position: 'relative' }}>
+                    <LeftJumbo
+                        initial={{
+                            x: -50,
+                            opacity: 0
+                        }}
+                        animate={{
+                            x: 0,
+                            opacity: 1
+                        }}
+                        transition={{
+                            type: 'tween',
+                            delay: 3,
+                            duration: 1.5
+                        }}
+                    >
+                        Frontend <br />
+                        developer
+                    </LeftJumbo>
+                    <Image
+                        initial={{
+                            opacity: 0
+                        }}
+                        animate={{
+                            x: 0,
+                            opacity: 1
+                        }}
+                        transition={{
+                            type: 'tween',
+                            delay: 1.5,
+                            duration: 1.5
+                        }}
+                        src={meImage}
+                    />
+                </div>
                 <TextWrapper>
                     <RightJumbo>Nick Lee</RightJumbo>
-                    <SubHeading>
+                    <SubHeading
+                        initial={{
+                            opacity: 0
+                        }}
+                        animate={{
+                            opacity: 1
+                        }}
+                        transition={{
+                            delay: 3,
+                            duration: 1.5
+                        }}
+                    >
                         Experienced front end developer driven by aesthetics. I
                         enjoy bringing designs and concepts to life.
                     </SubHeading>
@@ -58,7 +100,7 @@ const ContentWrapper = styled.div`
     }
 `;
 
-const JumboText = styled.h1`
+const JumboText = styled(motion.h1)`
     margin: 0;
     font-size: 60px;
     line-height: 1;
@@ -81,7 +123,7 @@ const RightJumbo = styled(JumboText)`
     z-index: 1;
 `;
 
-const Image = styled.img`
+const Image = styled(motion.img)`
     margin-left: 4px;
     height: 165px;
 
@@ -99,7 +141,7 @@ const Image = styled.img`
     }
 `;
 
-const SubHeading = styled.p`
+const SubHeading = styled(motion.p)`
     font-size: 18px;
     text-align: right;
     text-transform: uppercase;
@@ -113,7 +155,7 @@ const SubHeading = styled.p`
         text-align: left;
         width: 540px;
         margin-top: 10px;
-        margin-left: 1rem;
+        margin-left: 10px;
     }
 `;
 
@@ -121,15 +163,17 @@ const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-self: end;
+    align-items: flex-end;
     margin-top: 50px;
     width: 100%;
 
     @media ${device.tablet} {
+        align-items: flex-start;
         margin-top: 166px;
         width: 540px;
     }
     @media ${device.laptop} {
         margin-top: 0;
-        width: 650px;
+        width: 675px;
     }
 `;
