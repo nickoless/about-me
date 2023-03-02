@@ -4,6 +4,7 @@
         "module": "commonjs",
         "jsx": "react-jsx",
         "sourceMap": true,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "baseUrl": "./src"
     }
 }

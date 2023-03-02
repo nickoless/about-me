@@ -48,8 +48,9 @@ export const GlobalStyle = createGlobalStyle`
     body {
         cursor: none;
         margin: 0;
-        font-family: 'Neue Montreal', sans-serif;
+        background: ${theme.background};
         color: ${theme.offBlack};
+        font-family: 'Neue Montreal', sans-serif;
         letter-spacing: 1px;
     }
 

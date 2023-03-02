@@ -1,8 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
-import GlobalStyle from './GlobalStyle';
-import reportWebVitals from './reportWebVitals';
+
+import App from 'App';
+import GlobalStyle from 'globalStyle';
+import reportWebVitals from 'reportWebVitals';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode as Element);

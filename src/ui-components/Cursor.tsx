@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { theme } from './GlobalStyle';
+
+import { theme } from 'globalStyle';
 
 const Cursor = () => {
     if (typeof navigator !== 'undefined' && isMobile()) return null;

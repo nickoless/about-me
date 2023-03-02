@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import meImage from './assets/images/me.jpg';
-import { device } from './GlobalStyle';
-import SideBar from './SideBar';
-import { motion } from 'framer-motion';
+import mirrorImage from 'assets/images/mirror.png';
+import { device } from 'globalStyle';
+import SideBar from 'ui-components/SideBar';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Home = () => {
     return (
@@ -24,6 +24,9 @@ const Home = () => {
                             delay: 3,
                             duration: 1.5
                         }}
+                        exit={{
+                            opacity: 0
+                        }}
                     >
                         Frontend <br />
                         developer
@@ -41,11 +44,18 @@ const Home = () => {
                             delay: 1.5,
                             duration: 1.5
                         }}
-                        src={meImage}
+                        src={mirrorImage}
                     />
                 </div>
                 <TextWrapper>
-                    <RightJumbo>Nick Lee</RightJumbo>
+                    <RightJumbo
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ y: 10, opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        Nick Lee
+                    </RightJumbo>
                     <SubHeading
                         initial={{
                             opacity: 0
@@ -125,7 +135,8 @@ const RightJumbo = styled(JumboText)`
 
 const Image = styled(motion.img)`
     margin-left: 4px;
-    height: 165px;
+    width: 80%;
+    mix-blend-mode: difference;
 
     @media ${device.mobileL} {
         position: absolute;
@@ -133,11 +144,12 @@ const Image = styled(motion.img)`
         left: 4px;
         margin: 0;
         height: 225px;
+        width: unset;
     }
     @media ${device.tablet} {
-        height: 280px;
-        bottom: -275px;
-        left: 13px;
+        height: 225px;
+        bottom: -220px;
+        left: 10px;
     }
 `;
 

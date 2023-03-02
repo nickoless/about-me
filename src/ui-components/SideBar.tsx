@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { device, theme } from './GlobalStyle';
+
+import { device, theme } from '../globalStyle';
 
 const SideBar = () => {
     return (
@@ -61,6 +62,5 @@ const SideBarWrapper = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 50px 0;
     }
 `;
