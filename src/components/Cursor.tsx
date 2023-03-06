@@ -54,7 +54,7 @@ const Cursor = () => {
     };
 
     const handleLinkHoverEvents = () => {
-        document.querySelectorAll('a').forEach((el) => {
+        document.querySelectorAll('a, svg').forEach((el) => {
             el.addEventListener('mouseover', () => setLinkHovered(true));
             el.addEventListener('mouseout', () => setLinkHovered(false));
         });
@@ -116,17 +116,3 @@ const CursorEl = styled.div<{
         background-color: #fefefe;
         `}
 `;
-
-// .cursor--hidden {
-//     opacity: 0;
-// }
-
-// .cursor--link-hovered {
-//     transform: translate(-50%, -50%) scale(1.25);
-//     background-color: #fefefe;
-// }
-
-// .cursor--clicked {
-//     transform: translate(-50%, -50%) scale(0.9);
-//     background-color: #fefefe;
-// }

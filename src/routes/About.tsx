@@ -52,22 +52,36 @@ export default About;
 
 const ContentWrapper = styled(motion.section)`
     display: flex;
-    flex-direction: row;
-    margin-top: 100px;
+    flex-direction: column;
+    margin-top: 50px;
+
+    @media ${device.tablet} {
+        margin-top: 100px;
+        flex-direction: row;
+    }
 `;
 
 const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 3rem;
+
+    @media ${device.tablet} {
+        margin-left: 3rem;
+    }
 `;
 
 const Image = styled(motion.img)`
-    height: 225px;
+    align-self: flex-start;
+    margin-bottom: 2rem;
+    height: unset;
+    width: 100%;
+    max-width: 450px;
 
     @media ${device.tablet} {
         height: 300px;
+        width: unset;
+        max-width: unset;
     }
     @media ${device.laptop} {
         height: 500px;

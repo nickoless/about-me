@@ -4,14 +4,13 @@ import About from 'routes/About';
 import Contact from 'routes/Contact';
 import Home from 'routes/Home';
 import Work from 'routes/Work';
-import NavBar from 'ui-components//NavBar';
-import Cursor from 'ui-components/Cursor';
+import NavBar from 'components/NavBar';
+import Cursor from 'components/Cursor';
 
 const App = () => {
     const location = useLocation();
 
     return (
-        // <AnimatePresence mode="wait">
         <div>
             <Cursor />
             <NavBar />
@@ -20,7 +19,6 @@ const App = () => {
             <Route path="/work" component={Work} />
             <Route path="/contact" component={Contact} />
         </div>
-        // </AnimatePresence>
     );
 };
 

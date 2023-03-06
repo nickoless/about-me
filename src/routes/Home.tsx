@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import mirrorImage from 'assets/images/mirror.png';
 import { device } from 'globalStyle';
-import SideBar from 'ui-components/SideBar';
+import SideBar from 'components/SideBar';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Home = () => {
@@ -92,10 +92,10 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0 25px;
     width: 100%;
 
     @media ${device.mobileM} {
-        padding: 0 25px;
         height: 525px;
     }
     @media ${device.tablet} {
@@ -112,10 +112,13 @@ const ContentWrapper = styled.div`
 
 const JumboText = styled(motion.h1)`
     margin: 0;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 1;
     text-transform: uppercase;
 
+    @media ${device.mobileL} {
+        font-size: 75px;
+    }
     @media ${device.tablet} {
         font-size: 125px;
     }
@@ -134,20 +137,17 @@ const RightJumbo = styled(JumboText)`
 `;
 
 const Image = styled(motion.img)`
-    margin-left: 4px;
-    width: 80%;
+    width: 100%;
     mix-blend-mode: difference;
 
     @media ${device.mobileL} {
         position: absolute;
-        bottom: -230px;
-        left: 4px;
-        margin: 0;
-        height: 225px;
+        height: 175px;
         width: unset;
     }
     @media ${device.tablet} {
         height: 225px;
+        width: unset;
         bottom: -220px;
         left: 10px;
     }
