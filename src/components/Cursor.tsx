@@ -11,12 +11,6 @@ const Cursor = () => {
     const [linkHovered, setLinkHovered] = useState(false);
     const [hidden, setHidden] = useState(false);
 
-    useEffect(() => {
-        addEventListeners();
-        handleLinkHoverEvents();
-        return () => removeEventListeners();
-    }, []);
-
     const addEventListeners = () => {
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseenter', onMouseEnter);
@@ -32,6 +26,20 @@ const Cursor = () => {
         document.removeEventListener('mousedown', onMouseDown);
         document.removeEventListener('mouseup', onMouseUp);
     };
+
+    const handleLinkHoverEvents = () => {
+        document.querySelectorAll('a, svg').forEach((el) => {
+            el.addEventListener('mouseover', () => setLinkHovered(true));
+            el.addEventListener('mouseout', () => setLinkHovered(false));
+        });
+    };
+
+    useEffect(() => {
+        addEventListeners();
+        handleLinkHoverEvents();
+
+        return () => removeEventListeners();
+    }, [addEventListeners, handleLinkHoverEvents, removeEventListeners]);
 
     const onMouseMove = (e) => {
         setPosition({ x: e.clientX, y: e.clientY });
@@ -51,13 +59,6 @@ const Cursor = () => {
 
     const onMouseEnter = () => {
         setHidden(false);
-    };
-
-    const handleLinkHoverEvents = () => {
-        document.querySelectorAll('a, svg').forEach((el) => {
-            el.addEventListener('mouseover', () => setLinkHovered(true));
-            el.addEventListener('mouseout', () => setLinkHovered(false));
-        });
     };
 
     return (

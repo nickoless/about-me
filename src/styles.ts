@@ -11,6 +11,8 @@ export const Section = styled.section`
     top: 80px;
     margin: 4rem;
     height: calc(100% - 80px);
+    max-width: 1300px;
+    margin: auto;
 `;
 
 export const Heading = styled(motion.h2)`

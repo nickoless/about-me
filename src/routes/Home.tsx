@@ -84,6 +84,7 @@ export default Home;
 const Homepage = styled.section`
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     background: #dbd7d2;
 `;
@@ -92,8 +93,10 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: auto;
     padding: 0 25px;
     width: 100%;
+    max-width: 1300px;
 
     @media ${device.mobileM} {
         height: 525px;
