@@ -35,11 +35,11 @@ export default SideBar;
 /** STYLES */
 
 const SideBarWrapper = styled.div`
+    position: fixed;
     display: none;
-    height: 80%;
+    height: 100vh;
     min-width: 80px;
     width: 80px;
-    border-right: 2px solid ${theme.offWhite};
 
     a {
         cursor: none;
@@ -55,6 +55,14 @@ const SideBarWrapper = styled.div`
         :not(:first-child) {
             margin-top: 3rem;
         }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 80px;
+        height: 80%;
+        border-right: 2px solid ${theme.offWhite};
     }
 
     @media ${device.tablet} {

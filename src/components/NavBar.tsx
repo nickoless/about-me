@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { Link, useLocation } from 'wouter';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { device } from 'globalStyle';
 import { ReactComponent as MenuIcon } from 'assets/icons/menu.svg';
@@ -26,9 +26,20 @@ const NavLink = ({ name, link, selected }: Props) => (
 
 const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
+    const [navBackground, setNavBackground] = useState(false);
     const isMobile = !useMediaQuery(device.tablet);
     const location = useLocation();
     const currentLocation = location[0];
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY > 60) setNavBackground(true);
+            if (window.scrollY < 60) setNavBackground(false);
+        };
+
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    });
 
     const navLinksMap = navLinks.map((navLink) => (
         <NavLink
@@ -66,7 +77,10 @@ const NavBar = () => {
                 {showMenu && <NavDropdown>{navLinksMap}</NavDropdown>}
             </>
         );
-    else return <NavBarEl>{navLinksMap}</NavBarEl>;
+    else
+        return (
+            <NavBarEl $navBackground={navBackground}>{navLinksMap}</NavBarEl>
+        );
 };
 
 export default NavBar;
@@ -74,13 +88,14 @@ export default NavBar;
 const navLinks = [
     { name: 'Home.', link: '/' },
     { name: 'About.', link: '/about' },
-    { name: 'Contact.', link: '/contact' },
-    { name: 'Work.', link: '/work' }
+    { name: 'Work.', link: '/work' },
+    { name: 'Contact.', link: '/contact' }
 ];
 
 /** STYLES */
 
-const NavBarEl = styled.nav`
+const NavBarEl = styled.nav<{ $navBackground: boolean }>`
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -91,7 +106,10 @@ const NavBarEl = styled.nav`
     background: ${theme.offWhite};
 
     @media ${device.tablet} {
-        background: none;
+        width: 100%;
+        background: ${({ $navBackground }) =>
+            $navBackground ? theme.offWhite : 'transparent'};
+        transition: background 0.5s;
     }
 `;
 
@@ -115,7 +133,7 @@ const NavLinkEl = styled(motion.a)`
     }
 `;
 
-const NavUnderline = styled(motion.div)`
+const NavUnderline = styled(motion.div)<{ $navBackground: boolean }>`
     position: absolute;
     bottom: 0.25rem;
     left: 0;

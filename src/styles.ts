@@ -1,21 +1,37 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { device } from 'globalStyle';
+import styled from 'styled-components';
 
 export const Section = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: 80px;
-    margin: 4rem;
-    height: calc(100% - 80px);
-    max-width: 1300px;
     margin: auto;
+    margin-top: 60px;
+    padding: 2rem;
+    height: 100%;
+    max-width: 1300px;
+
+    @media ${device.tablet} {
+        margin-left: 80px;
+        padding: 4rem;
+    }
 `;
 
-export const Heading = styled(motion.h2)`
+export const ContentWrapper = styled(motion.div)`
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    width: 100%;
+
+    @media ${device.tablet} {
+        justify-content: flex-start;
+        margin-top: 100px;
+    }
+`;
+
+export const Heading = styled(motion.h1)`
     margin: 0;
     font-size: 55px;
     line-height: 1;
@@ -29,7 +45,7 @@ export const Heading = styled(motion.h2)`
     }
 `;
 
-export const SubHeading = styled(motion.h3)`
+export const SubHeading = styled(motion.h2)`
     margin: 0;
     font-size: 30px;
     line-height: 1;

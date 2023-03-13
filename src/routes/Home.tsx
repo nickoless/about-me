@@ -1,13 +1,11 @@
-import styled from 'styled-components';
 import mirrorImage from 'assets/images/mirror.png';
+import { motion } from 'framer-motion';
 import { device } from 'globalStyle';
-import SideBar from 'components/SideBar';
-import { motion, AnimatePresence } from 'framer-motion';
+import styled from 'styled-components';
 
 const Home = () => {
     return (
         <Homepage>
-            <SideBar />
             <ContentWrapper>
                 <div style={{ position: 'relative' }}>
                     <LeftJumbo
@@ -103,7 +101,7 @@ const ContentWrapper = styled.div`
     }
     @media ${device.tablet} {
         padding: 0 50px;
-        width: calc(100% - 80px);
+        margin-left: 60px;
     }
     @media ${device.laptop} {
         height: 700px;

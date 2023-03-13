@@ -3,7 +3,13 @@ import styled from 'styled-components';
 
 import meImage from 'assets/images/me.jpg';
 import { device } from 'globalStyle';
-import { Heading, Paragraph, Section, SubHeading } from 'styles';
+import {
+    ContentWrapper,
+    Heading,
+    Paragraph,
+    Section,
+    SubHeading
+} from 'styles';
 
 const About = () => {
     return (
@@ -49,17 +55,6 @@ const About = () => {
 };
 
 export default About;
-
-const ContentWrapper = styled(motion.section)`
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-
-    @media ${device.tablet} {
-        margin-top: 100px;
-        flex-direction: row;
-    }
-`;
 
 const TextWrapper = styled.div`
     display: flex;
