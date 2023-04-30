@@ -21,13 +21,16 @@ export const Section = styled.section`
 
 export const ContentWrapper = styled(motion.div)`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 50px;
     width: 100%;
 
     @media ${device.tablet} {
         justify-content: flex-start;
         margin-top: 100px;
+    }
+    @media ${device.laptop} {
+        flex-direction: row;
     }
 `;
 

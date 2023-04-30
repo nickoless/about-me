@@ -17,9 +17,6 @@ const Work = () => {
                 Work
             </Heading>
             <ContentWrapper>
-                <SubHeading>This page is a work in progress</SubHeading>
-            </ContentWrapper>
-            <ContentWrapper>
                 <CardWrapper>
                     {workHistory.map((work) => (
                         <HistoryCard
@@ -59,13 +56,13 @@ const workHistory: WorkHistory[] = [
         tenure: 'April 2022 to February 2023',
         languagesFrameworks: ['React', 'TypeScript', 'Styled Components'],
         librariesOther: [
-            'Material UI',
-            'Zustand',
             'GitHub Actions',
+            'Material UI',
             'React Query',
             'React Router',
             'React Testing Library',
-            'React Virtuoso'
+            'React Virtuoso',
+            'Zustand'
         ]
         // projects: [
         //     'Scaffolded pages with declarative routing via a tab like structure (similar to modern internet browsers)',
@@ -80,13 +77,13 @@ const workHistory: WorkHistory[] = [
         tenure: 'March 2020 to April 2022',
         languagesFrameworks: [
             'React',
-            'TypeScript',
             'JavaScript',
+            'TypeScript',
             'PHP',
             'SASS',
             'Styled Components'
         ],
-        librariesOther: ['Zustand', 'Framer Motion']
+        librariesOther: ['Framer Motion', 'Selenium', 'Zustand']
         // projects: [
         //     'Refactored parts of the codebase (phtml, JavaScript) into React / TypeScript components',
         //     'Improved internal tool for managing assets by optimizing search functionality',
@@ -101,7 +98,7 @@ const workHistory: WorkHistory[] = [
         role: 'Developing visual representations of data via different chart types and implementing analytical tools and the accompanying UI / UX.',
         tenure: 'March 2020 to April 2022',
         languagesFrameworks: ['React', 'TypeScript', 'LESS'],
-        librariesOther: ['Material UI', 'Blueprint JS', 'Hugo']
+        librariesOther: ['Blueprint JS', 'Hugo', 'Material UI']
         // projects: ['Added analytis']
     }
 ];

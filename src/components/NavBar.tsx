@@ -88,8 +88,8 @@ export default NavBar;
 const navLinks = [
     { name: 'Home.', link: '/' },
     { name: 'About.', link: '/about' },
-    { name: 'Work.', link: '/work' },
-    { name: 'Contact.', link: '/contact' }
+    { name: 'Work.', link: '/work' }
+    // { name: 'Contact.', link: '/contact' }
 ];
 
 /** STYLES */

@@ -61,7 +61,7 @@ const TextWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         margin-left: 3rem;
     }
 `;
